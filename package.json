@@ -15,7 +15,8 @@
   },
   "scripts": {
     "dev": "webpack serve --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "start": "node -r ./public/bundle.js"
   },
   "dependencies": {
     "axios": "^0.21.1"
