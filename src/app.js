@@ -3,7 +3,7 @@ import UtilsDate from './app/utils/UtilsDate';
 
 export default class App {
     constructor(){
-        this.baseUrl = 'http://localhost:3000'
+        this.baseUrl = 'https://resume-online-backend.herokuapp.com'
         this.addEvents();
         this.populateMessages();
     }
