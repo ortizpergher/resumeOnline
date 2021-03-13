@@ -1,0 +1,95 @@
+.img-profile-user {
+    border-radius: 50%;
+    max-width: 180px;
+    max-height: 200px;
+}
+
+.socialNetworkIcon {
+    max-width: 50px;
+    max-height: 50px;
+    border: 0;
+}
+
+.has-error {
+    border-color: rgb(221, 64, 64) !important;
+}
+
+.form-control-feedback {
+    display: none;
+}
+
+.has-error .form-control-feedback {
+    color: brown;
+    display: block;
+}
+
+.page-login {
+    background-color: rgb(210, 214, 222);
+    height: 100vh;
+}
+
+.page-login form div {
+    position: relative;
+    width: 300px;
+}
+
+.page-login input {
+    margin-bottom: 10px;
+}
+
+.icon {
+    color: #ccc;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.page-admin {
+    height: 100vh;
+}
+
+#wrapper {
+    overflow-x: hidden;
+ }
+
+#sidebar-wrapper {
+  min-height: 100%;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
