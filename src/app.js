@@ -78,6 +78,13 @@ export default class App {
                 this.populateInbox();
             }
         });
+
+        const iconPassword = document.getElementById('iconPassword');
+        iconPassword.addEventListener('click', event => {
+            event.preventDefault();
+
+            this.showPassword(iconPassword);
+        });
     }
 
     logout(){
@@ -85,11 +92,26 @@ export default class App {
         this.userSession();        
     }
 
+    showPassword(icon) {
+        const passwordType = document.getElementById('password');
+
+        if (passwordType.getAttribute('type') == 'password') {
+            passwordType.setAttribute('type', 'text');
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        } else {
+            passwordType.setAttribute('type', 'password');
+            icon.classList.add('fa-eye');
+            icon.classList.remove('fa-eye-slash');
+        }
+
+    }
+
     userSession() {
         const user = localStorage.getItem('userResume');
 
         if (user) {
-            this.pageAdmin();
+            this.setPage();
         } else {
             this.profilePage();
         }
@@ -126,9 +148,8 @@ export default class App {
             if(newLogin.status == 200){
                 formSignin.reset();
                 localStorage.setItem('userResume', newLogin.data.user);
-                this.pageAdmin();              
-            }    
-            
+                this.setPage();              
+            }
         } catch (error) {
             this.setLoginError();
         }
@@ -136,7 +157,7 @@ export default class App {
         btn.disabled = false;        
     }
 
-    pageAdmin() {
+    setPage() {
         document.getElementsByClassName('wrapper')[0].classList.add('d-none');
         document.getElementsByClassName('page-login')[0].classList.add('d-none');
         document.getElementsByClassName('page-admin')[0].classList.remove('d-none');
