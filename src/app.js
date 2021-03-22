@@ -328,6 +328,8 @@ export default class App {
         let contact = {};
         let isValid = true;
 
+        const checkEmail = new RegExp(/^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-\.]{2,}\.[A-Za-z0-9]{2,}(\.[A-Za-z0-9])?/);
+
         const formContact = document.getElementById('form-contact');
 
         [...formContact.elements].forEach(field => {
@@ -335,6 +337,10 @@ export default class App {
                 field.parentElement.classList.add('has-error');
                 field.classList.add('has-error');
                 isValid = false;                
+            } else if ( field.name == 'email' && !checkEmail.test(field.value) ) {
+                field.parentElement.classList.add('has-error');
+                field.classList.add('has-error');
+                isValid = false;
             } else {
                 field.parentElement.classList.remove('has-error');
                 field.classList.remove('has-error');
